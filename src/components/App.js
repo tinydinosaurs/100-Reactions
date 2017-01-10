@@ -9,19 +9,13 @@ class App extends Component {
       <div className="App">
         <h1>why is everyone yelling?</h1>
         <div className="project">
-          <Link to='/login-form'>login form project</Link>
+          <Link to='/login'>login form</Link>
         </div>
         <div className="project">
-          <Link to='/login-form'>project 2</Link>
+          <Link to='/checkout'>checkout form</Link>
         </div>
         <div className="project">
-          <Link to='/login-form'>projecct 3</Link>
-        </div>
-        <div className="project">
-          <Link to='/login-form'>project 4</Link>
-        </div>
-        <div className="project">
-          <Link to='/login-form'>project 5</Link>
+          <Link to='/netflix'>netflix landing page</Link>
         </div>
       </div>
     );

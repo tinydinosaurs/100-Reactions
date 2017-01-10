@@ -1,0 +1,189 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css?family=Libre+Franklin:300,400,400i,700');
+
+
+/*$lightEl: #F9E0D9;*/
+/*$cinnabar: #DD403A;*/
+/*$cosmiclatte: #FFFCE8;*/
+/*$lowOpacityLight: rgba(249, 224, 217, 0.4);*/
+
+/* Styles */
+.body {
+	background-color: white;
+  background-image: url(https://dl.dropboxusercontent.com/u/14132676/clouds/IMG_4152.JPG);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: #3E363F;
+	font-family: 'Libre Franklin', sans-serif;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.body:before {
+  content: '';
+  position: absolute;
+  z-index: -100;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(to bottom right, black,black);
+  opacity: .6;
+}
+
+.breadcrumbs {
+  color: rgba(249,240,240, 0.85);
+  position: fixed;
+  top: 0;
+  left: 1rem;
+  background-color: rgba(0,0,0,0.4);
+  padding: 4px 6px;
+}
+
+.breadcrumbs a {
+  color: rgba(249,240,240, 1);
+}
+
+.app {
+	align-items: center;
+	display: flex;
+	height: 100vh;
+	justify-content: center;
+	width: 100vw;
+	position: absolute;
+	top: 0; left: 0;
+}
+
+.modal {
+	background: rgba(255, 255, 252, 0.95);
+	border-radius: 6px;
+	padding: 20px;
+	width: 200px;
+}
+
+/* Inputs */
+.input {
+	display: flex;
+	flex-direction: row-reverse;
+	border-bottom: 1px solid rgba(49,63,68, 0.7);
+	padding-bottom: 3px;
+	margin-bottom: 5px;
+}
+
+input {
+	/* General styles */
+	outline: none;
+	border: 0;
+	color: black;
+	background: transparent;
+	font-family: 'Libre Franklin', sans-serif;
+	flex: 1 0 auto;
+	font-size: 14px;
+	font-weight: 400;
+}
+
+input:focus ~ label {
+  opacity: 1;
+}
+
+input[type='text'] ~ label:before {
+  content: "\f007";
+}
+
+input[type='email'] ~ label:before {
+  content: "\f1fa";
+}
+
+input[type='password'] ~ label:before {
+  content: "\f023";
+}
+
+/* Input Label */
+
+.input label {
+  font-family: FontAwesome;
+  font-size: 13px;
+  opacity: .3;
+  transition: opacity .5s ease;
+}
+
+.input label:before {
+  align-items: center;
+  color: #313f44;
+  display: flex;
+  height: 30px;
+  justify-content: center;
+  width: 30px;
+}
+
+/* Button */
+button {
+	align-items: center;
+	background: #313f44;
+	border: 0;
+	border-radius: 3px;
+	color: white;
+	display: flex;
+
+	font-family: 'Libre Franklin', sans-serif;
+	font-size: 13px;
+	font-weight: 500;
+	justify-content: center;
+	margin-top: 20px;
+	outline: none;
+	padding: 10px 9px 10px 11px;
+	text-transform: uppercase;
+	width: 100%;
+}
+
+button .fa {
+  font-size: 12px;
+  margin-left: auto;
+  position: relative;
+  top: 1px;
+}
+
+button:hover {
+  transform: scale(1.02);
+}
+
+button:active {
+  transform: scale(.99);
+}
+
+/* Animation Classes */
+.example-enter {
+	margin-top: 30px;
+	opacity: .01;
+}
+
+.example-enter-active {
+  margin-top: 0px;
+  opacity: 1;
+  transition: opacity .5s ease, margin .5s ease;
+}
+
+.example-leave {
+	margin-top: 0px;
+	opacity: 1;
+}
+
+.example-leave-active {
+  margin-top: -30px;
+  opacity: .01;
+  transition: opacity .3s ease, margin .5s ease;
+}
+
+/* fake styles */
+
+.test {
+  z-index: 100;
+  color: white;
+  opacity: 0.65;
+  font-size: 24px;
+}
+
+input::-webkit-input-placeholder {
+  color: rgba(0 , 0 , 0, 0.65);
+}
