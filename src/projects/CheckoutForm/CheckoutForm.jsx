@@ -45,6 +45,12 @@ class CheckoutForm extends Component {
         <p>checkout form</p>
         <ImagePreview />
         <Checkout />
+        <ReactCSSTransitionGroup transitionName="overlay" transitionEnterTimeout={500} transitionLeaveTimeout={300}>
+          {Overlay}
+        </ReactCSSTransitionGroup>
+        <ReactCSSTransitionGroup transitionName="container" transitionEnterTimeout={500} transitionLeaveTimeout={300}>
+          {Container}
+        </ReactCSSTransitionGroup>
       </div>
     );
   }
