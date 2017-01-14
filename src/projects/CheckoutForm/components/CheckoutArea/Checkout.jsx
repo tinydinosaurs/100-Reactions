@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import OrderSummary from './OrderSummary';
+import { PaymentForm } from './PaymentFormComponents';
 
 class Checkout extends Component {
   render() {
