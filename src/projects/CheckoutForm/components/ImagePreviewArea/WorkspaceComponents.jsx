@@ -19,7 +19,7 @@ const Meta = (props) => {
   return (
     <div className="WorkspaceMeta">
       <div className="Description">Rent the entire office for {people}</div>
-      <div className="Dates"><strong>Start Date</strong> to <strong>End Date</strong></div>
+      <div className="Dates"><strong>Mon. 18 Jan 2017</strong> to <strong>Fri. 20 Jan 2017</strong></div>
     </div>
   );
 }
