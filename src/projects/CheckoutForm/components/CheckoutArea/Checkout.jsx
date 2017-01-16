@@ -7,7 +7,8 @@ class Checkout extends Component {
     return(
       <div>
         <h1>this is the checkout component</h1>
-        <OrderSummary componentName="order summary" />
+        <OrderSummary componentName="order summary" duration={this.props.duration} price={this.props.price} discount={this.props.discount} tax={this.props.tax} />
+        <PaymentForm onSubmit={this.props.handleSubmit} />
       </div>
     );
   }

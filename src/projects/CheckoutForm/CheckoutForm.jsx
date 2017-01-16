@@ -1,21 +1,45 @@
 import React, { Component } from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group' // ES6
+// components
 import ImagePreview from './components/ImagePreviewArea/ImagePreview';
 import Checkout from './components/CheckoutArea/Checkout';
 import Header from './components/Header/Header';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group' // ES6
-
 // styles for the whole project
-import '../../components/App.css';
+import './App.css';
+// image
+// import Image from './images/galactic_coworking.jpg';
 
-const Overlay = (props) => {
-  return (
-    <div className="Overlay" style={{'backgroundImage': 'url('+ props.image + ')'}}>This is the overlay</div>
-  );
+
+// const Overlay = (props) => {
+//   return (
+//     <div className="overlay__main--checkout-form" style={{'backgroundImage': 'url('+ props.image + ')'}}>This is the overlay</div>
+//   );
+// }
+//
+// const Container = (props) => {
+//   <div className="Container">{props.children}</div>
+// }
+
+class Overlay extends Component {
+  render() {
+    return (
+      <div className="overlay__main--checkout-form" style={{'backgroundImage':'url(' + this.props.image + ')'}}>
+        this is the overlay
+      </div>
+    );
+  }
 }
 
-const Container = (props) => {
-  <div className="Container">{props.children}</div>
+class Container extends Component {
+    render() {
+    return (
+      <div className="Container">
+        {this.props.children}
+      </div>
+    )
+  }
 }
+
 
 class CheckoutForm extends Component {
   constructor(props) {
@@ -29,6 +53,7 @@ class CheckoutForm extends Component {
       discount: 0
     }
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -40,10 +65,21 @@ class CheckoutForm extends Component {
     console.log(e.target.value)
   }
 
-  render() {
+  handleSubmit(e) {
+    e.preventDefault()
+    console.log("you clicked submit, you smarty")
+  }
 
+  render() {
+    // let overlay, container;
+    // container = (
+    //   <Container>
+    //     <ImagePreview duration={this.state.duration} price={this.state.price} people={this.state.people} image="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/jj-2.jpg" />
+    //     <Checkout duration={this.state.duration} price={this.state.price} tax={this.state.tax} discount={this.state.discount} onSubmit={this.state.handleSubmit} />
+    //   </Container>
+    // )
     return (
-      <div className="App">
+      <div className="content__main--checkout-form">
         <p>checkout form</p>
         <ImagePreview />
         <Checkout />
@@ -61,3 +97,16 @@ class CheckoutForm extends Component {
 }
 
 export default CheckoutForm;
+
+// let overlay, container;
+// if(this.state.mounted) {
+//   overlay = (
+//     <Overlay image="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/jj-2.jpg" />
+//   );
+//   container = (
+//     <Container>
+//       <ImagePreview duration={this.state.duration} price={this.state.price} people={this.state.people} image="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/jj-2.jpg" />
+//       <Checkout duration={this.state.duration} price={this.state.price} tax={this.state.tax} discount={this.state.discount} onSubmit={this.state.handleSubmit} />
+//     </Container>
+//   );
+// }

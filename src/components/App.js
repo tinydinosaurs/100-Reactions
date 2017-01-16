@@ -6,7 +6,7 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div className="content__main--home">
         <h1 className="home__h1">why is everyone yelling?</h1>
         <div className="projects">
           <div className="project project__color-1">

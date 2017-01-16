@@ -7,7 +7,7 @@ const Information = (props) => {
     <div className="WorkspaceInformation">
       <div className="WorkspaceName">{props.name}</div>
       <div className="WorkspacePrice">
-        <div className="Price">{props.price}</div>
+        <div className="Price">${props.price}</div>
         <div className="Duration">/ {duration}</div>
       </div>
     </div>
