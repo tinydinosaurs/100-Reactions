@@ -5,8 +5,7 @@ import { PaymentForm } from './PaymentFormComponents';
 class Checkout extends Component {
   render() {
     return(
-      <div>
-        <h1>this is the checkout component</h1>
+      <div className="Checkout">
         <OrderSummary componentName="order summary" duration={this.props.duration} price={this.props.price} discount={this.props.discount} tax={this.props.tax} />
         <PaymentForm onSubmit={this.props.handleSubmit} />
       </div>

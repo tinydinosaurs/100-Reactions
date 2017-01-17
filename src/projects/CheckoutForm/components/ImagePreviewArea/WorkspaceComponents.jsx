@@ -1,24 +1,34 @@
 import React from 'react';
-import pluralize from 'pluralize';
 
 const Information = (props) => {
-  let duration = pluralize('day', props.duration);
+  let duration;
+  if(props.duration === "1") {
+    duration =  "week";
+  } else {
+    duration = "weeks";
+  }
   return (
-    <div className="WorkspaceInformation">
-      <div className="WorkspaceName">{props.name}</div>
-      <div className="WorkspacePrice">
-        <div className="Price">${props.price}</div>
-        <div className="Duration">/ {duration}</div>
+    <div className="checkout__form-info">
+      <div className="checkout__form--location">{props.name}</div>
+      <div className="checkout__form--price-data">
+        <div className="checkout__form--price">${props.price}</div>
+        <div className="checkout__form--duration">/ {duration}</div>
       </div>
     </div>
   );
 }
 
 const Meta = (props) => {
-  let people = pluralize('person', props.people);
+  let people;
+  if(props.people === 1) {
+    people = `${props.people} person`;
+  } else {
+    people = `${props.people} people`;
+  }
+  console.log(people)
   return (
-    <div className="WorkspaceMeta">
-      <div className="Description">Rent the entire office for {people}</div>
+    <div className="checkout__form--metadata">
+      <div className="Description">Office space for {people}</div>
       <div className="Dates"><strong>Mon. 18 Jan 2017</strong> to <strong>Fri. 20 Jan 2017</strong></div>
     </div>
   );

@@ -8,8 +8,6 @@ import Overlay from './components/Overlay/Overlay';
 import Container from './components/Container/Container';
 // styles for the whole project
 import './App.css';
-// image
-// import Image from './images/galactic_coworking.jpg';
 
 
 class CheckoutForm extends Component {
@@ -17,11 +15,10 @@ class CheckoutForm extends Component {
     super(props);
     this.state = {
       mounted: false,
-      people: 1,
+      people: 10,
       price: 320.00,
       tax: 20,
       duration: 1,
-      discount: 0
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -33,7 +30,7 @@ class CheckoutForm extends Component {
 
   handleChange(e) {
     this.setState({duration: e.target.value})
-    console.log(e.target.value)
+    // console.log(e.target.value)
   }
 
   handleSubmit(e) {
@@ -45,18 +42,18 @@ class CheckoutForm extends Component {
     let overlay, container;
     if(this.state.mounted) {
       overlay = (
-        <Overlay image="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/jj-2.jpg" />
+        <Overlay image="https://cdn.spacetelescope.org/archives/images/screen/opo9941a.jpg" />
       );
       container = (
         <Container>
-          <ImagePreview duration={this.state.duration} price={this.state.price} people={this.state.people} image="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/jj-2.jpg" />
+          <ImagePreview duration={this.state.duration} price={this.state.price} people={this.state.people} image={require("./images/galactic_coworking_inside.jpg")} />
           <Checkout duration={this.state.duration} price={this.state.price} tax={this.state.tax} discount={this.state.discount} onSubmit={this.state.handleSubmit} />
         </Container>
       )
     }
 
     return (
-      <div className="content__main--checkout-form">
+      <div className="checkout__content--main">
         <ReactCSSTransitionGroup transitionName="overlay" transitionEnterTimeout={500} transitionLeaveTimeout={300}>
           {overlay}
         </ReactCSSTransitionGroup>
@@ -70,16 +67,3 @@ class CheckoutForm extends Component {
 }
 
 export default CheckoutForm;
-
-// let overlay, container;
-// if(this.state.mounted) {
-//   overlay = (
-//     <Overlay image="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/jj-2.jpg" />
-//   );
-//   container = (
-//     <Container>
-//       <ImagePreview duration={this.state.duration} price={this.state.price} people={this.state.people} image="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/jj-2.jpg" />
-//       <Checkout duration={this.state.duration} price={this.state.price} tax={this.state.tax} discount={this.state.discount} onSubmit={this.state.handleSubmit} />
-//     </Container>
-//   );
-// }

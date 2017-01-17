@@ -3,7 +3,7 @@ import React from 'react';
 
 const Container = (props) => {
   return (
-    <div className="container--checkout">{props.children}</div>
+    <div className="checkout__form--container">{props.children}</div>
   );
 }
 
