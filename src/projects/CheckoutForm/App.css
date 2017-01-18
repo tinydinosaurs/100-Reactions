@@ -32,6 +32,17 @@
   padding: 20px;
 }
 
+.checkout__header label {
+  padding: 0;
+  margin: 0;
+  font-size: 1.125rem;
+}
+
+input#numDays {
+  margin: 0;
+  padding: 0;
+}
+
 .checkout__form--container {
   display: -webkit-box;
   display: -webkit-flex;

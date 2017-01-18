@@ -25,7 +25,6 @@ const Meta = (props) => {
   } else {
     people = `${props.people} people`;
   }
-  console.log(people)
   return (
     <div className="checkout__form--metadata">
       <div className="Description">Office space for {people}</div>
