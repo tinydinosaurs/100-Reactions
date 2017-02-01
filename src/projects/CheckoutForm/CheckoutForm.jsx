@@ -7,7 +7,7 @@ import Header from './components/Header/Header';
 import Overlay from './components/Overlay/Overlay';
 import Container from './components/Container/Container';
 // styles for the whole project
-import './App.css';
+import './CheckoutForm.css';
 
 
 class CheckoutForm extends Component {
