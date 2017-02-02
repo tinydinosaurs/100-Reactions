@@ -19,7 +19,7 @@ const Input = React.createClass({
   render: function() {
     return (
       <div className="input">
-        <input
+        <input className="login__input"
           id={this.props.name}
           type={this.props.type}
           placeholder={this.props.placeholder}
@@ -38,7 +38,7 @@ const Modal = React.createClass({
           <Input id="name" type="text" placeholder="full name" />
           <Input id="username" type="email" placeholder="name@email.com" />
           <Input id="password" type="password" placeholder="password" />
-          <button>log in <i className="fa fa-fw fa-chevron-right"></i></button>
+          <button className="login__button">log in <i className="fa fa-fw fa-chevron-right"></i></button>
         </form>
       </div>
     )

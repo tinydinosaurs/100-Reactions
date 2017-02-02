@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Libre+Franklin:300,400,400i,700');
 
 
-
+.container__netflix {
+  padding: 2rem;
+}
 
 
 /*h2, .TitleList .Title {
@@ -80,7 +82,7 @@ p {
 .Navigation ul li {
   font-weight: 400;
   padding: 7px 10px;
-  font-size: 14px;
+  font-size: 0.85rem;
   -webkit-transition: background .125s ease;
   transition: background .125s ease;
   border-radius: 3px;
@@ -113,18 +115,16 @@ p {
   pointer-events: none;
 }
 .Search input {
-  font-family: "Lato", sans-serif;
-  font-weight: 300;
-  font-size: 14px;
-  height: 37px;
-  width: 20%;
+  font-size: 1rem;
+  height: 2.25rem;
+  width: 25%;
   background: transparent;
-  color: #ffffff;
+  color: #5a5a5a;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
   border: 0;
-  border: 2px solid rgba(245, 245, 241, 0.1);
+  border: 2px solid rgba(225, 225, 221, 1);
   outline: none;
   border-radius: 37px;
   padding: 0 10px;
@@ -170,7 +170,7 @@ p {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 300;
   height: 44px;
 }
@@ -256,7 +256,7 @@ p {
   box-sizing: border-box;
   border: 2px solid rgba(245, 245, 241, 0.2);
   border-radius: 44px;
-  font-size: 14px;
+  font-size: 0.85rem;
   font-weight: 600;
   -webkit-transition: border .125s ease, background .125s ease;
   transition: border .125s ease, background .125s ease;
@@ -345,20 +345,20 @@ p {
   transition: opacity .125s ease;
 }
 .Item .overlay .title {
-  font-size: 22px;
+  font-size: 1.375rem;
   font-weight: 200;
   opacity: 0;
   -webkit-transition: opacity .25s ease;
   transition: opacity .25s ease;
 }
 .Item .overlay .rating {
-  font-size: 14px;
+  font-size: 0.85rem;
   opacity: 0;
   -webkit-transition: opacity .25s ease .125s;
   transition: opacity .25s ease .125s;
 }
 .Item .overlay .plot {
-  font-size: 14px;
+  font-size:0.85rem;
   display: -webkit-box;
   margin-top: 100px;
   font-weight: 300;
@@ -396,7 +396,7 @@ p {
   border: 2px solid rgba(255, 255, 255, 0.2);
   width: 32px;
   height: 32px;
-  font-size: 16px;
+  font-size: 1rem;
   border-radius: 32px;
   overflow: hidden;
   position: absolute;
