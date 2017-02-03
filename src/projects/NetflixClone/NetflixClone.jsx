@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-
+import TitleList from './TitleList';
+import Config from './config';
 import './NetflixClone.css';
+
+const ApiKey = Config.TMDb;
 
 class NetflixClone extends Component {
 
@@ -14,24 +17,29 @@ class NetflixClone extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
   handleKeyUp(e) {
-    console.log('*');
+    e.preventDefault();
+       if (e.key === 'Enter' && this.state.searchTerm !== '')  {
+         let searchUrl = `search/multi?query=${this.state.searchTerm}&api_key=${ApiKey}`;
+         this.setState({ searchUrl: searchUrl });
+       }
   }
 
   handleChange(e) {
-    // console.log(e.target.value);
+    e.preventDefault();
     this.setState({
       searchTerm: e.target.value
     });
-    console.log(this.state.searchTerm);
   }
 
   render() {
+    // console.log(this.state.searchUrl);
     return (
       <div className="container__netflix">
         <h1>netflix landing page</h1>
         <form className="Search">
           <input onKeyUp={this.handleKeyUp} onChange={this.handleChange} type="search" placeholder="search a movie title!" value={this.state.searchTerm}/>
         </form>
+        <TitleList />
       </div>
     );
   }
