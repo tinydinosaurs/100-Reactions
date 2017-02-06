@@ -13,16 +13,16 @@ class NetflixClone extends Component {
       searchTerm: '',
       searchUrl: ''
     }
-    this.handleKeyUp = this.handleKeyUp.bind(this);
+    // this.handleKeyUp = this.handleKeyUp.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
-  handleKeyUp(e) {
-    e.preventDefault();
-       if (e.key === 'Enter' && this.state.searchTerm !== '')  {
-         let searchUrl = `search/multi?query=${this.state.searchTerm}&api_key=${ApiKey}`;
-         this.setState({ searchUrl: searchUrl });
-       }
-  }
+  // handleKeyUp(e) {
+  //   e.preventDefault();
+  //      if (e.key === 'Enter' && this.state.searchTerm !== '')  {
+  //        let searchUrl = `search/multi?query=${this.state.searchTerm}&api_key=${ApiKey}`;
+  //        this.setState({ searchUrl: searchUrl });
+  //      }
+  // }
 
   handleChange(e) {
     e.preventDefault();
@@ -32,14 +32,14 @@ class NetflixClone extends Component {
   }
 
   render() {
-    // console.log(this.state.searchUrl);
     return (
       <div className="container__netflix">
         <h1>netflix landing page</h1>
         <form className="Search">
-          <input onKeyUp={this.handleKeyUp} onChange={this.handleChange} type="search" placeholder="search a movie title!" value={this.state.searchTerm}/>
+          <input onChange={this.handleChange} type="search" placeholder="search a movie title!" value={this.state.searchTerm}/>
+          {/* <input onKeyUp={this.handleKeyUp} onChange={this.handleChange} type="search" placeholder="search a movie title!" value={this.state.searchTerm}/> */}
         </form>
-        <TitleList />
+        <TitleList searchTerm={this.state.searchTerm} url={this.state.searchUrl} apiKey={ApiKey} />
       </div>
     );
   }

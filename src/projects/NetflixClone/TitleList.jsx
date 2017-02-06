@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 
+
 class TitleList extends Component {
-  // constructor(props) {
-  //   super(props);
-  // }
 
   componentDidMount() {
     console.log('yo');
@@ -14,7 +12,8 @@ class TitleList extends Component {
   }
 
   loadContent(e) {
-    console.log(this.props.url, 'load content');
+    let requestUrl = `https://api.themoviedb.org/3/${this.props.url}&api_key=${this.props.apiKey}`
+    console.log(requestUrl, this.state.TitleList);
   }
 
   render() {
