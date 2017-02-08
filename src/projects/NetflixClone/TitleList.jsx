@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Item from './Item';
 
 class TitleList extends Component {
   constructor(props) {
@@ -16,7 +16,7 @@ class TitleList extends Component {
     fetch(requestUrl).then((response) => {
       return response.json();
     }).then((data) => {
-      console.log(data);
+      // console.log(data);
       this.setState({ data: data });
     }).catch((error) => {
       console.log('something has gone horribly wrong', error);
@@ -35,21 +35,53 @@ class TitleList extends Component {
   }
 
   componentDidMount() {
-    console.log('yo', this.props.url === '');
+    // console.log('yo', this.props.url === '');
     if (this.props.url !== '') {
       this.loadContent();
       this.setState({ mounted: true })
     }
   }
 
-
   render() {
-    return (
-      <div>
-        <p>a list of movie titles about {this.props.searchTerm}</p>
-      </div>
-    )
-  }
-}
+    if(!this.state.data) {
+      return;
+    }
+    let titles;
+      if(this.state.data.results) {
+        titles = this.state.data.results.map(function(title, i) {
+          if(i < 5) {
+            let name;
+            // var backDrop = 'http://image.tmdb.org/t/p/original' + title.backdrop_path;
+            if(title.name) {
+              name = title.name;
+            } else {
+              name = title.title;
+            }
+
+            return (
+              <Item key={title.id} title={name} score={title.vote_average} overview={title.overview} />
+            );
+
+          }else{
+            return (<div key={title.id}></div>);
+          }
+        });
+
+      }
+
+      return (
+        <div ref="titlecategory" className="TitleList" data-loaded={this.state.mounted}>
+          <div className="Title">
+            <h1>{this.props.title}</h1>
+            <div className="titles-wrapper">
+              {titles}
+            </div>
+          </div>
+        </div>
+      );
+    }
+  };
+
+
 
 export default TitleList;
