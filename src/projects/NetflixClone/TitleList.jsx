@@ -11,6 +11,29 @@ class TitleList extends Component {
     this.loadContent = this.loadContent.bind(this);
   }
 
+  loadContent(e) {
+    let requestUrl = `https://api.themoviedb.org/3/${this.props.url}&api_key=${this.props.apiKey}`;
+    fetch(requestUrl).then((response) => {
+      return response.json();
+    }).then((data) => {
+      console.log(data);
+      this.setState({ data: data });
+    }).catch((error) => {
+      console.log('something has gone horribly wrong', error);
+    })
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if(nextProps.url !== this.props.url && nextProps.url !== '') {
+      this.setState({
+        mounted: true,
+        url: nextProps.url
+      }, () => {
+        this.loadContent();
+      })
+    };
+  }
+
   componentDidMount() {
     console.log('yo', this.props.url === '');
     if (this.props.url !== '') {
@@ -19,17 +42,6 @@ class TitleList extends Component {
     }
   }
 
-  loadContent(e) {
-    let requestUrl = `https://api.themoviedb.org/3/${this.props.url}&api_key=${this.props.apiKey}`;
-    fetch(requestUrl).then((response) => {
-      console.log(response);
-      return response.json();
-    }).then((data) => {
-      this.setState({ data: data });
-    }).catch((error) => {
-      console.log('something has gone horribly wrong', error);
-    })
-  }
 
   render() {
     return (
