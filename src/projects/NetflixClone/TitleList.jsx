@@ -51,7 +51,7 @@ class TitleList extends Component {
         titles = this.state.data.results.map(function(title, i) {
           if(i < 5) {
             let name;
-            // var backDrop = 'http://image.tmdb.org/t/p/original' + title.backdrop_path;
+            let backDrop = 'http://image.tmdb.org/t/p/original' + title.backdrop_path;
             if(title.name) {
               name = title.name;
             } else {
@@ -59,7 +59,7 @@ class TitleList extends Component {
             }
 
             return (
-              <Item key={title.id} title={name} score={title.vote_average} overview={title.overview} />
+              <Item key={title.id} title={name} score={title.vote_average} overview={title.overview} backdrop={backDrop} />
             );
 
           }else{
