@@ -51,7 +51,13 @@ class TitleList extends Component {
         titles = this.state.data.results.map(function(title, i) {
           if(i < 5) {
             let name;
-            let backDrop = 'http://image.tmdb.org/t/p/original' + title.backdrop_path;
+            let backDrop;
+            if(title.backdrop_path) {
+              backDrop = 'http://image.tmdb.org/t/p/original' + title.backdrop_path;
+            } else {
+              backDrop = "http://placekitten.com/g/1920/1080"
+            }
+
             if(title.name) {
               name = title.name;
             } else {

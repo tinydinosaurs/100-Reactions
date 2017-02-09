@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import TitleList from './TitleList';
+import Logo from './Logo';
+import Navigation from './Navigation';
+import Hero from './Hero';
 import Config from './config';
 import './NetflixClone.css';
 
@@ -35,10 +38,13 @@ class NetflixClone extends Component {
     return (
       <div>
         <header className="Header">
+          <Logo />
+          <Navigation />
           <div id="search" className="Search">
             <input onKeyUp={this.handleKeyUp} onChange={this.handleChange} type="search" placeholder="Search for a title..." value={this.state.searchTerm}/>
           </div>
         </header>
+        <Hero />
         <TitleList title="Search Results" url={this.state.searchUrl} apiKey={ApiKey} />
         <TitleList title="Top TV picks for Jack" url='discover/tv?sort_by=popularity.desc&page=1' apiKey={ApiKey} />
         <TitleList title="Trending now" url='discover/movie?sort_by=popularity.desc&page=1' apiKey={ApiKey} />
