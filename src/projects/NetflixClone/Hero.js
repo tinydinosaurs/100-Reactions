@@ -8,9 +8,9 @@ import React from 'react';
 const Hero = props => (
   <div id="hero" className="Hero" style={{backgroundImage: 'url(http://placekitten.com/g/1080/500)'}}>
     <div className="content">
-      <img className="logo" src="http://www.returndates.com/backgrounds/narcos.logo.png" alt="narcos background" />
+      <img className="logo" src={require("./images/narcats.logo.png")} alt="narcos background" />
       <h2>Season 2 now available</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque id quam sapiente unde voluptatum alias vero debitis, magnam quis quod.</p>
+      <p>Cat ipsum dolor sit amet, chase after silly colored fish toys around the house yet scratch leg; meow for can opener to feed me or chirp at birds stare at the wall, play with food and get confused by dust.</p>
       <div className="button-wrapper">
         {/* <HeroButton primary={true} text="Watch now" /> */}
         {/* <HeroButton primary={false} text="+ My list" /> */}
