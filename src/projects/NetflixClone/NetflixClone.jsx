@@ -45,12 +45,12 @@ class NetflixClone extends Component {
           </div>
         </header>
         <Hero />
-        <TitleList title="Search Results" url={this.state.searchUrl} apiKey={ApiKey} />
-        <TitleList title="Top TV picks for Jack" url='discover/tv?sort_by=popularity.desc&page=1' apiKey={ApiKey} />
-        <TitleList title="Trending now" url='discover/movie?sort_by=popularity.desc&page=1' apiKey={ApiKey} />
-        <TitleList title="Most watched in Horror" url='genre/27/movies?sort_by=popularity.desc&page=1' apiKey={ApiKey} />
-        <TitleList title="Sci-Fi greats" url='genre/878/movies?sort_by=popularity.desc&page=1' apiKey={ApiKey} />
-        <TitleList title="Comedy magic" url='genre/35/movies?sort_by=popularity.desc&page=1' apiKey={ApiKey} />
+        <TitleList title="you searched for these." url={this.state.searchUrl} apiKey={ApiKey} />
+        <TitleList title="I'm sure you'll like these." url='discover/tv?sort_by=popularity.desc&page=1' apiKey={ApiKey} />
+        <TitleList title="People seem to like these." url='discover/movie?sort_by=popularity.desc&page=1' apiKey={ApiKey} />
+        <TitleList title="Horror is the best!" url='genre/27/movies?sort_by=popularity.desc&page=1' apiKey={ApiKey} />
+        <TitleList title="Sci-Fi is also the best!" url='genre/878/movies?sort_by=popularity.desc&page=1' apiKey={ApiKey} />
+        <TitleList title="Comedy is alright, I guess." url='genre/35/movies?sort_by=popularity.desc&page=1' apiKey={ApiKey} />
       </div>
     );
   }
