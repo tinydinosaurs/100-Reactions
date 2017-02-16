@@ -1,6 +1,7 @@
 {
   "name": "100-Reactions",
   "version": "0.1.0",
+  "homepage": "https://tinydinosaurs.github.io/100-Reactions/",
   "private": true,
   "devDependencies": {
     "react-scripts": "0.8.4"
