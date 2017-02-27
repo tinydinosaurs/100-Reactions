@@ -19,7 +19,7 @@ class App extends Component {
             <Link to='/netflix'>netflix landing page</Link>
           </div>
           <div className="project project__color-4">
-            {/*<Link to='/netflix'>netflix landing page</Link>*/}
+            <Link to='/calculator'>fancy animated calculator</Link>
           </div>
           <div className="project project__color-5">
             {/*<Link to='/netflix'>netflix landing page</Link>*/}
