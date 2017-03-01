@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Immutable from 'immutable';
 import Buttons from './Buttons';
 import Button from './Button';
 import Display from './Display';
@@ -14,7 +15,9 @@ class Calculator extends Component {
   }
 
   handleClick(e) {
-    console.log(e.target);
+    const value = e.target.getAttribute('data-value');
+    let newOperations = Immutable.List(this.state.operations).push(value).toJS();
+    console.log(newOperations);
   }
 
 
