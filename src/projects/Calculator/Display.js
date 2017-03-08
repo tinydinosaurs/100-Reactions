@@ -1,10 +1,10 @@
 import React from 'react';
 
 const Display = (props) => {
+  // let string = props.data.join('')
   return (
     <div>
-      <h2>This is the calculator display</h2>
-      <p>0.7734</p>
+      hello
     </div>
   )
 }
