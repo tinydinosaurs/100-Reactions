@@ -1,2 +1,8 @@
 .calc-button {
-  background-color: lightpink; }
+  background-color: thistle;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 3rem;
+  cursor: pointer; }

@@ -3,7 +3,8 @@ import Immutable from 'immutable';
 import Buttons from './Buttons';
 import Button from './Button';
 import Display from './Display';
-import './Calculator.css';
+// import './Calculator.css';
+import '../../App.css';
 
 class Calculator extends Component {
   constructor(props) {

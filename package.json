@@ -7,7 +7,10 @@
     "react-scripts": "0.8.4"
   },
   "dependencies": {
+    "concurrently": "^3.4.0",
     "immutable": "^3.8.1",
+    "node-sass": "^4.5.0",
+    "nodemon": "^1.11.0",
     "pluralize": "^3.1.0",
     "react": "^15.4.1",
     "react-addons-css-transition-group": "^15.4.2",
@@ -18,6 +21,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build-css": "node-sass --include-path scss src/App.scss src/App.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\"",
+    "start-with-sass": "concurrently --kill-others \"npm run watch-css\" \"npm start\""
   }
 }
