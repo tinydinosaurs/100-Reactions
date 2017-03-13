@@ -24,32 +24,34 @@ class Calculator extends Component {
 
   render() {
     return (
-      <div className="calc-container">
+      <div className="calc-page">
         <h1>This will be a fancy calculator!</h1>
-        <Display />
-        <Buttons>
-          <Button onClick={this.handleClick} label="C" value="clear" />
-          <Button onClick={this.handleClick} label="7" value="7" />
-          <Button onClick={this.handleClick} label="4" value="4" />
-          <Button onClick={this.handleClick} label="1" value="1" />
-          <Button onClick={this.handleClick} label="0" value="0" />
+        <div className="calc-container">
+          <Display />
+          <Buttons>
+            <Button onClick={this.handleClick} label="C" value="clear" />
+            <Button onClick={this.handleClick} label="7" value="7" />
+            <Button onClick={this.handleClick} label="4" value="4" />
+            <Button onClick={this.handleClick} label="1" value="1" />
+            <Button onClick={this.handleClick} label="0" value="0" />
 
-          <Button onClick={this.handleClick} label="/" value="/" />
-          <Button onClick={this.handleClick} label="8" value="8" />
-          <Button onClick={this.handleClick} label="5" value="5" />
-          <Button onClick={this.handleClick} label="2" value="2" />
-          <Button onClick={this.handleClick} label="." value="." />
+            <Button onClick={this.handleClick} label="/" value="/" />
+            <Button onClick={this.handleClick} label="8" value="8" />
+            <Button onClick={this.handleClick} label="5" value="5" />
+            <Button onClick={this.handleClick} label="2" value="2" />
+            <Button onClick={this.handleClick} label="." value="." />
 
-          <Button onClick={this.handleClick} label="x" value="x" />
-          <Button onClick={this.handleClick} label="9" value="9" />
-          <Button onClick={this.handleClick} label="6" value="6" />
-          <Button onClick={this.handleClick} label="3" value="3" />
-          <Button label="<="/>
+            <Button onClick={this.handleClick} label="x" value="x" />
+            <Button onClick={this.handleClick} label="9" value="9" />
+            <Button onClick={this.handleClick} label="6" value="6" />
+            <Button onClick={this.handleClick} label="3" value="3" />
+            <Button label="<="/>
 
-          <Button onClick={this.handleClick} label="-" value="-" />
-          <Button onClick={this.handleClick} label="+" value="+" />
-          <Button onClick={this.handleClick} label="=" value="equal" />
-        </Buttons>
+            <Button onClick={this.handleClick} label="-" value="-" />
+            <Button className="big-calc-button" onClick={this.handleClick} label="+" value="+" />
+            <Button className="big-calc-button" onClick={this.handleClick} label="=" value="equal" />
+          </Buttons>
+        </div>
       </div>
     )
   }

@@ -1,9 +1,44 @@
-.calc-button {
-  background-color: thistle;
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
+.calc-page {
+  padding: 2rem;
+}
+
+.calc-container {
+  border: 1px solid grey;
+  border-radius: 1rem;
+  width: 38vw;
   text-align: center;
-  line-height: 3rem;
+  padding: 1rem 0;
+}
+
+.calc-buttons {
+  border: 1px solid thistle;
+  border-radius: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: space-between;
+  width: 35vw;
+  height: 40vw;
+  margin: 0 auto;
+}
+
+.calc-button {
+  display: flex;
+	box-sizing: border-box;
+	border: 1px solid rgba(black, .05);
+  background-color: thistle;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  line-height: 4rem;
   cursor: pointer;
+	align-items: center;
+	justify-content: center;
+	min-width: 4rem;
+}
+
+.big-calc-button {
+  background-color: pink;
 }
